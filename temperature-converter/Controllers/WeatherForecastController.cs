@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Nancy.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Helpers;
 
 namespace temperature_converter.Controllers
 {
@@ -36,6 +39,19 @@ namespace temperature_converter.Controllers
             .ToArray();
         }
 
-       
+        [HttpPost("TestName")]
+        public ActionResult TestName(string name)
+        {
+            //your logic
+
+            //var serializer = new JavaScriptSerializer();
+            //return serializer.Serialize(name);
+            return Content("<script language='javascript' type='text/javascript'>alert('Thanks for Feedback!');</script>");
+
+            //return ActionResult(name);
+            //return Json(name);
+        }
+
+
     }
 }

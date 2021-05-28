@@ -1,26 +1,49 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h1 id="tableLabel">Temperature Converstion</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
 
-<!--<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
-    </tr>
-  </tbody>
-</table>-->
-<input #box (keyup)="onKey(box.value)">
-Your name is: {{name}}
+
+<table> <tbody>
+   <tr>
+     <td> <input #box ></td>
+   
+   </tr>
+   <tr>
+
+     <!--<select (change)="selectChangeHandler($event)">
+    <option value="F">F</option>
+    <option value="C">C</option>
+    <option value="K">K</option>
+
+  </select>-->
+
+
+     <article>
+       <h1>Select method </h1>
+      
+       <select (change)="selectChangeHandler($event)">
+         <option value="Null">Please select the value</option>
+         <option value="F">F</option>
+         <option value="C">C</option>
+         <option value="K">K</option>
+
+       </select>
+       <p><span>You selected: </span><b>{{selectedTemp}}</b></p>
+     </article>
+     <!--<mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>None</mat-option>
+      <mat-option value="F">F</mat-option>
+      <mat-option value="C">C</mat-option>
+      <mat-option value="K">K</mat-option>
+    </mat-select>
+  </mat-form-field>-->
+   </tr>
+   <tr><td>
+
+         <button (click)="addNewOption(box.value, selected.value)">Covert</button></td></tr>
+
+   </tbody></table>
+
+
